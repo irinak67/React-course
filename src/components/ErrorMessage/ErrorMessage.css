@@ -1,0 +1,9 @@
+.error-message {
+  padding: 20px;
+  text-align: center;
+}
+
+.error-message h2 {
+  color: #dc2626;
+  font-size: 1.2rem;
+}

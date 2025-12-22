@@ -5,20 +5,21 @@
   text-align: center;
 }
 
-.home__title {
+.homeTitle {
   font-size: 3rem;
   margin-bottom: 24px;
-  color: #1f2937;
+  color: var(--text-color);
 }
 
-.home__description {
+.homeDescription {
   font-size: 1.25rem;
   line-height: 1.8;
-  color: #4b5563;
+  color: var(--text-color);
+  opacity: 0.8;
   margin-bottom: 32px;
 }
 
-.home__cta {
+.homeButton {
   display: inline-block;
   padding: 12px 32px;
   background-color: #2563eb;
@@ -30,6 +31,7 @@
   transition: background-color 0.2s;
 }
 
-.home__cta:hover {
+.homeButton:hover {
   background-color: #1d4ed8;
+  color: white;
 }

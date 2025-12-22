@@ -41,5 +41,16 @@ export const fetchCategories = async (): Promise<string[]> => {
   if (!res.ok) {
     throw new Error('Failed to fetch categories');
   }
-  return res.json();
+  const data = await res.json();
+  
+  if (Array.isArray(data) && data.length > 0) {
+    if (typeof data[0] === 'string') {
+      return data;
+    }
+    
+    type CategoryObj = { slug?: string; name?: string };
+    return data.map((cat: CategoryObj) => cat.slug || cat.name || String(cat));
+  }
+  
+  return [];
 };

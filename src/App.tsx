@@ -1,24 +1,25 @@
 import { useIsFetching } from '@tanstack/react-query'
 import { Route, Routes } from 'react-router-dom'
-import { Header } from './components/Header'
+import { Navbar } from './components/Navbar'
+import { CartSidebar } from './components/CartSidebar'
+import { ToastHost } from './components/ToastHost'
 import { HomePage } from './pages/home.page'
 import { AboutPage } from './pages/about.page'
 import { ProductsList } from './pages/products-list.page'
 import { ProductDetail } from './pages/product-detail.page'
 import styles from './App.module.css';
+import { LoadingSpinner } from './components/LoadingSpinner';
 
 function App() {
   const isFetching = useIsFetching();
 
   return (
     <>
-      <Header />
+      <Navbar />
+      <CartSidebar />
+      <ToastHost />
       <div className={styles.container}>
-        {isFetching > 0 && (
-          <div className={styles.loadingSpinner}>
-            Updating data...
-          </div>
-        )}
+        {isFetching > 0 && <LoadingSpinner />}
 
         <Routes>
           <Route path="/" element={<HomePage />} />

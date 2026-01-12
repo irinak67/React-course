@@ -39,6 +39,14 @@ export const Navbar = () => {
                     >
                         {TEXTS.header.nav.about}
                     </NavLink>
+                    <NavLink
+                        to="/register"
+                        className={({ isActive }) =>
+                            isActive ? `${styles.navbarLink} ${styles.navbarLinkActive}` : styles.navbarLink
+                        }
+                    >
+                        {TEXTS.header.nav.register}
+                    </NavLink>
                 </nav>
                 <div className={styles.navbarActions}>
                     <ThemeToggle />

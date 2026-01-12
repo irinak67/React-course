@@ -5,6 +5,7 @@ export const TEXTS = {
       home: 'Home',
       products: 'Products',
       about: 'About',
+      register: 'Register',
     },
     cart: '🛒 Cart',
   },
